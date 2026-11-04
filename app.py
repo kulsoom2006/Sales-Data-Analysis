@@ -1,6 +1,52 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+st.markdown("""
+<style>
+
+/* Main Background */
+.stApp {
+    background-color: #F4F7FC;
+}
+
+/* Main Heading */
+h1 {
+    color: #142D4E;
+    font-weight: 800;
+}
+
+/* Sub Headings */
+h2, h3 {
+    color: #24476B;
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background-color: #142D4E;
+}
+
+[data-testid="stSidebar"] * {
+    color: white;
+}
+
+/* Metric Cards */
+[data-testid="stMetric"] {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #DCE5F0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+/* Buttons */
+.stButton button {
+    background-color: #24476B;
+    color: white;
+    border-radius: 8px;
+}
+
+</style>
+""", unsafe_allow_html=True)
 
 st.title("Sales Data Analysis")
 
