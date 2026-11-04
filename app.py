@@ -22,7 +22,7 @@ st.write(df.dtypes)
 
 st.write(df.duplicated().sum())
 
-st.write(df[df.duplicated(keep=False).sort_values("Order ID").head(6)])
+st.write(df[df.duplicated(keep=False)].sort_values("Order ID").head(6))
 
 df = df.drop_duplicates()
 st.write(df.shape)
@@ -43,9 +43,9 @@ st.write(df[df["Quantity Ordered"] >= 7]["Product"].value_counts())
 df["Sales"] = df["Quantity Ordered"] * df["Price Each"]
 fig_box = px.box(df, x="Sales", title="Sales per row")
 
-q1 = df["Sales"].Quantile(0.25)
-q3 = df["Sales"].Quantile(0.75)
-upper = q3 = 1.5 * (q3 - q1)
+q1 = df["Sales"].quantile(0.25)
+q3 = df["Sales"].quantile(0.75)
+upper = q3 + 1.5 * (q3 - q1)
 
 outliers = df[df["Sales"] > upper]
 st.write("Upper limit:", upper, "| Outlier rows:", len(outliers))
