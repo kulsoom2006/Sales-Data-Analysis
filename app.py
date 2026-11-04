@@ -4,7 +4,7 @@ import plotly.express as px
 
 st.title("Sales Data Analysis")
 
-df = pd.read_csv("Sales Data .csv")
+df = pd.read_csv("Sales.csv")
 st.write(df.shape)
 
 st.write(df.head())
